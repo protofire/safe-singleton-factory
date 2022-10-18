@@ -5,6 +5,7 @@ import { ethers } from 'ethers'
 import dotenv from "dotenv";
 import yargs from 'yargs/yargs';
 import { compileContracts } from './utils';
+import * as sapphire from '@oasisprotocol/sapphire-paratime';
 
 dotenv.config()
 
@@ -32,11 +33,19 @@ async function writeFactoryDeployerTransaction(contract: CompilerOutputContract,
 	const value = 0
 	const data = arrayFromHexString(deploymentBytecode)
 
-	if (!process.env.MNEMONIC) throw Error("MNEMONIC is required")
-	const signer = ethers.Wallet.fromMnemonic(process.env.MNEMONIC!!)
+	//if (!process.env.MNEMONIC) throw Error("MNEMONIC is required")
+	//const signer = ethers.Wallet.fromMnemonic(process.env.MNEMONIC!!)
+
+	//For generating from private key of 0x6DE4De587117b83c0a762e5D03BF1ecDdd68EBb1
+ 	let privateKey = process.env.PK!!;
+	//let signer = new ethers.Wallet(privateKey);
+	const signer = sapphire.wrap(new ethers.Wallet(privateKey).connect(ethers.getDefaultProvider('https://testnet.sapphire.oasis.dev')));
+
+	console.log(chainId);
 	const signedEncodedTransaction = await signer.signTransaction({
 		nonce, gasPrice, gasLimit, value, data, chainId
 	})
+	console.log(signedEncodedTransaction);
 	const signerAddress = await signer.getAddress()
 	const contractAddress = ethers.utils.getContractAddress({ from: signerAddress, nonce } )
 

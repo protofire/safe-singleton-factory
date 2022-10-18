@@ -1,0 +1,35 @@
+====IOTEX====
+yarn compile 4691 --gasPrice=1000000000000 --gasLimit=1000725 --nonce=0
+
+====CUBE Testnet===
+yarn compile 1819 --gasPrice=1000000000 --gasLimit=100725 --nonce=0
+
+====CUBE Mainnet===
+yarn compile 1818 --gasPrice=200000000000 --gasLimit=1000725 --nonce=0
+
+====TELOS Testnet===
+yarn compile 41 --gasPrice=503374890480 --gasLimit=1000725 --nonce=0
+
+====SKALE Testnet===
+yarn compile 1250011826715177 --gasPrice=100000 --gasLimit=1900000 --nonce=0
+
+====HEDERA Dev===
+yarn compile 298 --gasPrice=720000000000 --gasLimit=1900000 --nonce=0
+
+====WANCHAIN Testnet===
+yarn compile 999 --gasPrice=3000000000 --gasLimit=10000000 --nonce=0
+
+====KARURA===
+yarn compile 686 --gasPrice=205402014868 --gasLimit=38046433 --nonce=0
+
+====OASIS Emerald Testnet===
+yarn compile 42261 --gasPrice=100000000000 --gasLimit=1500000 --nonce=0
+
+====OASIS Sapphire Testnet===
+yarn compile 23295 --gasPrice=100000000000 --gasLimit=150000 --nonce=1
+
+====NeonEVM Devnet===
+yarn compile 245022926 --gasPrice=162633000000 --gasLimit=21000000 --nonce=0
+
+====Bobabeam===
+yarn compile 1294 --gasPrice=1000000000 --gasLimit=1000725 --nonce=0
