@@ -1,0 +1,5 @@
+==Sapphire Testnet==
+yarn compile 23295 --gasPrice=100000000000 --gasLimit=169500 --nonce=0
+
+==Sapphire Mainnet==
+yarn compile 23294 --gasPrice=100000000000 --gasLimit=169500 --nonce=0
